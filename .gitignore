@@ -28,4 +28,5 @@ lerna-debug.log*
 .DS_Store
 
 /node_modules
-.app.db
+app.db
+package-lock.json
