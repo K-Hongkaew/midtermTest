@@ -1,0 +1,28 @@
+GET http://localhost:3000/api/vehicle
+
+###
+GET http://localhost:3000/api/vehicle/2
+###
+POST http://localhost:3000/api/vehicle/createVehicle
+Content-Type: application/json
+
+{
+    "plate_number" : "C1023",
+    "model" : "S",
+    "year" : "2559",
+    "color" : "Blue"
+}
+
+###
+PUT http://localhost:3000/api/vehicle/updateVehicle/4
+Content-Type: application/json
+
+{
+    "plate_number" : "R021",
+    "model" : "A",
+    "year" : "2550",
+    "color" : "Green"
+}
+
+###
+DELETE  http://localhost:3000/api/vehicle/deleteVehicle/4

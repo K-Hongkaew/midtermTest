@@ -1,0 +1,31 @@
+GET http://localhost:3000/api/license
+
+###
+GET http://localhost:3000/api/license/1
+###
+
+POST http://localhost:3000/api/license/createLicense
+Content-Type: application/json
+
+{
+    "license_number" : "R122445",
+    "issue_date" : "10/12/2558",
+    "expiry_date" : "10/12/2578",
+    "type" : "Car",
+    "driver_id" : 4
+}
+
+###
+PUT http://localhost:3000/api/license/updateLicense/4
+Content-Type: application/json
+
+{
+    "license_number" : "N12931212",
+    "issue_date" : "10/12/2558",
+    "expiry_date" : "10/12/2568",
+    "type" : "Car",
+    "driver_id" : 4
+}
+
+###
+DELETE  http://localhost:3000/api/license/deleteLicense/4

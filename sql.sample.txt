@@ -1,0 +1,40 @@
+CREATE TABLE vehicle_table (
+  vehicles_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  plate_number TEXT NOT NULL UNIQUE,
+  model TEXT NOT NULL,
+  year INTEGER NOT NULL,
+  color TEXT NOT NULL
+);
+
+CREATE TABLE driver_table (
+  driver_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  address TEXT NOT NULL,
+  DOB TEXT NOT NULL
+);
+
+CREATE TABLE license_table (
+  license_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  license_number TEXT NOT NULL UNIQUE,
+  issue_date TEXT NOT NULL,
+  expiry_date TEXT NOT NULL,
+  type TEXT NOT NULL,
+  driver_id INTEGER NOT NULL,
+  FOREIGN KEY (driver_id)
+    REFERENCES driver_table(driver_id)
+);
+
+CREATE TABLE traffic_ticket_table (
+  ticket_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  date TEXT NOT NULL,
+  violation TEXT NOT NULL,
+  fine INTEGER NOT NULL,
+  status TEXT NOT NULL,
+  driver_id INTEGER NOT NULL,
+  vehicle_id INTEGER NOT NULL,
+  FOREIGN KEY (driver_id)
+    REFERENCES driver_table(driver_id),
+  FOREIGN KEY (vehicle_id)
+    REFERENCES vehicle_table(vehicles_id)
+);

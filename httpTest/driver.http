@@ -1,0 +1,28 @@
+GET http://localhost:3000/api/driver
+
+###
+GET http://localhost:3000/api/driver/2
+###
+POST http://localhost:3000/api/driver/createDriver
+Content-Type: application/json
+
+{
+    "name" : "Jasdop Doe",
+    "phone" : "0911234567",
+    "address" : "24/7/MaGong",
+    "DOB" : "10/01/2000"
+}
+
+###
+PUT http://localhost:3000/api/driver/updateDriver/3
+Content-Type: application/json
+
+{
+    "name" : "Micheal Doe",
+    "phone" : "0911239876",
+    "address" : "11/7/NumSom",
+    "DOB" : "12/01/2000"
+}
+
+###
+DELETE  http://localhost:3000/api/driver/deleteDriver/3

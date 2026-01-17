@@ -1,0 +1,33 @@
+GET http://localhost:3000/api/traffic
+
+###
+GET http://localhost:3000/api/traffic/1
+###
+
+POST http://localhost:3000/api/traffic/createTicket
+Content-Type: application/json
+
+{
+    "date": "2024-12-10",
+    "violation": "Speeding",
+    "fine": 500,
+    "status": "Unpaid",
+    "driver_id": 2,
+    "vehicle_id": 2
+}
+
+###
+PUT http://localhost:3000/api/traffic/updateTicket/2
+Content-Type: application/json
+
+{
+    "date": "2024-12-10",
+    "violation": "Speeding",
+    "fine": 500,
+    "status": "paid",
+    "driver_id": 2,
+    "vehicle_id": 2
+}
+
+###
+DELETE  http://localhost:3000/api/traffic/deleteTicket/2
